@@ -84,15 +84,15 @@ function pushContent() {
         var subheading = document.createElement("p");
         var date = document.createElement("p")
 
-//         main.appendChild(image);
-//         main.appendChild(heading);
-//         main.appendChild(subheading);
-//         main.appendChild(date);
+        main.appendChild(image);
+        main.appendChild(heading);
+        main.appendChild(subheading);
+        main.appendChild(date);
     
-//         image.src = items[i].source;
-//         heading.innerHTML = items[i].itemName;
-//         subheading.innerHTML = items[i].collection;
-//         date.innerHTML = items[i].dateOfOrigin;
+        image.src = items[i].source;
+        heading.innerHTML = items[i].itemName;
+        subheading.innerHTML = items[i].collection;
+        date.innerHTML = items[i].dateOfOrigin;
 //     }
     
 // }

@@ -77,12 +77,12 @@ function pushContent() {
     
     
 //     for (var i=0; i<items.length; i++) {
-//         var main = document.getElementById("content");
-//         var list = document.createElement("li");
-//         var image = document.createElement("img");
-//         var heading = document.createElement("h3");
-//         var subheading = document.createElement("p");
-//         var date = document.createElement("p")
+        var main = document.getElementById("content");
+        var list = document.createElement("li");
+        var image = document.createElement("img");
+        var heading = document.createElement("h3");
+        var subheading = document.createElement("p");
+        var date = document.createElement("p")
 
 //         main.appendChild(image);
 //         main.appendChild(heading);

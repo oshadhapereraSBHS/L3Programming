@@ -17,18 +17,18 @@ class Item {
     }
 }
 
-// const Item1 = new Item (
-//     "/images/museum (1).jpg",
-//     1,
-//     "World War I Plaque",
-//     "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-//     ["Gallipoli","War"],
-//     "New Zealand",
-//     "War",
-//     "1981",
-//     "2009",
-//     "Tom Smith",
-// );
+const Item1 = new Item (
+    "/images/museum (1).jpg",
+    1,
+    "World War I Plaque",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    ["Gallipoli","War"],
+    "New Zealand",
+    "War",
+    "1981",
+    "2009",
+    "Tom Smith",
+);
 
 
 // const Item2 = new Item (

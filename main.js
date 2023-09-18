@@ -1,21 +1,21 @@
 const items = [];
 
 
-// class Item {
-//     constructor(source, itemId, itemName, itemDescription, keywords, origin, collection, dateOfOrigin, dateDonated, donatedBy){
-//         this.source = source;
-//         this.itemId = itemId;
-//         this.itemName = itemName;
-//         this.itemDescription = itemDescription;
-//         this.keywords = keywords;
-//         this.origin = origin;
-//         this.collection = collection;
-//         this.dateOfOrigin = dateOfOrigin;
-//         this.dateDonated = dateDonated;
-//         this.donatedBy = donatedBy;
+class Item {
+    constructor(source, itemId, itemName, itemDescription, keywords, origin, collection, dateOfOrigin, dateDonated, donatedBy){
+        this.source = source;
+        this.itemId = itemId;
+        this.itemName = itemName;
+        this.itemDescription = itemDescription;
+        this.keywords = keywords;
+        this.origin = origin;
+        this.collection = collection;
+        this.dateOfOrigin = dateOfOrigin;
+        this.dateDonated = dateDonated;
+        this.donatedBy = donatedBy;
 
-//     }
-// }
+    }
+}
 
 // const Item1 = new Item (
 //     "/images/museum (1).jpg",

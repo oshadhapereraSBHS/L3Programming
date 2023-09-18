@@ -65,12 +65,12 @@ const Item3 = new Item (
 // }
 
 
-// function pushContent() {
+function pushContent() {
     
-//     items.push(Item1);
-//     items.push(Item2);
-//     items.push(Item3);
-// }
+    items.push(Item1);
+    items.push(Item2);
+    items.push(Item3);
+}
 
 // function fillContents() {
 

@@ -31,31 +31,31 @@ const Item1 = new Item (
 );
 
 
-// const Item2 = new Item (
-//     "/images/museum (13).jpg",
-//     2,
-//     "Stained Glass Painting",
-//     "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-//     ["Art","Stained glass"],
-//     "New Zealand",
-//     "Art",
-//     "1941",
-//     "1988",
-//     "Frank Peters",
-// );
+const Item2 = new Item (
+    "/images/museum (13).jpg",
+    2,
+    "Stained Glass Painting",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    ["Art","Stained glass"],
+    "New Zealand",
+    "Art",
+    "1941",
+    "1988",
+    "Frank Peters",
+);
 
-// const Item3 = new Item (
-//     "/images/museum (16).jpg",
-//     3,
-//     "D Grant, SBHS Headmaster",
-//     "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-//     ["War","Headmaster"],
-//     "New Zealand",
-//     "War",
-//     "1918",
-//     "1949",
-//     "William Te Amo",
-// );
+const Item3 = new Item (
+    "/images/museum (16).jpg",
+    3,
+    "D Grant, SBHS Headmaster",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    ["War","Headmaster"],
+    "New Zealand",
+    "War",
+    "1918",
+    "1949",
+    "William Te Amo",
+);
 
 
 // window.onload = function() {

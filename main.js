@@ -74,8 +74,7 @@ function pushContent() {
 
 function fillContents() {
 
-    
-    
+
     for (var i=0; i<items.length; i++) {
         var main = document.getElementById("content");
         var list = document.createElement("li");
@@ -84,10 +83,12 @@ function fillContents() {
         var subheading = document.createElement("p");
         var date = document.createElement("p")
 
-        main.appendChild(image);
-        main.appendChild(heading);
-        main.appendChild(subheading);
-        main.appendChild(date);
+        main.appendChild(list);
+
+        list.appendChild(image);
+        list.appendChild(heading);
+        list.appendChild(subheading);
+        list.appendChild(date);
     
         image.src = items[i].source;
         heading.innerHTML = items[i].itemName;

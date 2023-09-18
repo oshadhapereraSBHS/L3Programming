@@ -58,11 +58,11 @@ const Item3 = new Item (
 );
 
 
-// window.onload = function() {
+window.onload = function() {
 
-//     pushContent();
-//     fillContents();
-// }
+    pushContent();
+    fillContents();
+}
 
 
 function pushContent() {

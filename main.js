@@ -72,11 +72,11 @@ function pushContent() {
     items.push(Item3);
 }
 
-// function fillContents() {
+function fillContents() {
 
     
     
-//     for (var i=0; i<items.length; i++) {
+    for (var i=0; i<items.length; i++) {
         var main = document.getElementById("content");
         var list = document.createElement("li");
         var image = document.createElement("img");
@@ -93,6 +93,6 @@ function pushContent() {
         heading.innerHTML = items[i].itemName;
         subheading.innerHTML = items[i].collection;
         date.innerHTML = items[i].dateOfOrigin;
-//     }
+    }
     
-// }
+}

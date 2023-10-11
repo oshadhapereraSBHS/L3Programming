@@ -25,7 +25,7 @@ function pushContent() {
         items.push(Item15);
 }
 
-// function check(){
+function check(){
 //     for (var i=0; i<items.length; i++) {
 //         if(items[i].source == searchText || 
 //             items[i].itemId == searchText || 
@@ -40,7 +40,7 @@ function pushContent() {
             
 //         }
 //     }
-//     }
+    }
 
 function fillContents() {
     for (var i=0; i<searchDisplay.length; i++) {

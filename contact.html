@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="search.js"></script>
+    <script type="text/javascript" src="metadata.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <title>SBHS Museum</title>
+</head>
+<body>
+    <div class="container">
+        <div class="logoDiv">
+            <img id="logo" src="/images/logo.png">
+        </div>
+        <div class="navDiv">
+            <input type="text" placeholder="Search..">
+            <button type="submit"><img id="buttonIcon" src="images/search.png" onclick="searchPage()"></button>
+            <a href="contact.html">Contact</a>
+        </div>
+        
+        <div class="contactDiv">
+            <form>
+                <form action="action_page.php">
+
+                    <label for="fname">First Name</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Your name..">
+                
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Your last name..">
+                    <label for="fname">Email</label>
+                    <input type="text" id="email" name="email" placeholder="Your email..">
+                
+                    <label for="lname">Phone</label>
+                    <input type="number" id="phone" name="phone" placeholder="Your phone number..">
+
+                    <label for="query">Type of query</label>
+                    <select id="query" name="query">
+                      <option value="inquiry">Inquiry about collections</option>
+                      <option value="booking">Booking for visiting museum</option>
+                      <option value="research">Research request</option>
+                    </select>
+                
+                    <label for="subject">Message</label>
+                    <textarea id="subject" name="subject" placeholder="Your message.." style="height:200px"></textarea>
+                
+                    <input type="submit" value="Submit">
+
+
+
+            </form>
+        </div>
+
+        <div class="overlayDiv">
+
+        </div>
+
+    </div>
+</body>
+</html>

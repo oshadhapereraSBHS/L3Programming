@@ -26,7 +26,7 @@ function pushContent() {
 }
 
 function check(){
-//     for (var i=0; i<items.length; i++) {
+    for (var i=0; i<items.length; i++) {
 //         if(items[i].source == searchText || 
 //             items[i].itemId == searchText || 
 //             items[i].itemName == searchText || 
@@ -39,7 +39,7 @@ function check(){
 //             searchDisplay.push(items[i]);
             
 //         }
-//     }
+    }
     }
 
 function fillContents() {

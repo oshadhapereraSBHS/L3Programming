@@ -30,12 +30,13 @@ function check(){
         if(items[i].source == searchText || 
             items[i].itemId == searchText || 
             items[i].itemName == searchText || 
-            items[i].keywords == searchText || 
+            items[i].keywords[0] == searchText || 
+            items[i].keywords[1] == searchText || 
             items[i].origin == searchText || 
             items[i].collection == searchText || 
             items[i].dateOfOrigin == searchText|| 
             items[i].dateDonated == searchText|| 
-            items[i].donatedBy == searchText){
+            items[i].donatedBy == searchText ){
             searchDisplay.push(items[i]);
             
         }

@@ -27,7 +27,7 @@ function pushContent() {
 
 function check(){
     for (var i=0; i<items.length; i++) {
-//         if(items[i].source == searchText || 
+        if(items[i].source == searchText || 
 //             items[i].itemId == searchText || 
 //             items[i].itemName == searchText || 
 //             items[i].keywords == searchText || 
@@ -38,7 +38,7 @@ function check(){
 //             items[i].donatedBy == searchText){
 //             searchDisplay.push(items[i]);
             
-//         }
+        }
     }
     }
 

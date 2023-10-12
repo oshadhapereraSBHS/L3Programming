@@ -28,15 +28,15 @@ function pushContent() {
 function check(){
     for (var i=0; i<items.length; i++) {
         if(items[i].source == searchText || 
-//             items[i].itemId == searchText || 
-//             items[i].itemName == searchText || 
-//             items[i].keywords == searchText || 
-//             items[i].origin == searchText || 
-//             items[i].collection == searchText || 
-//             items[i].dateOfOrigin == searchText|| 
-//             items[i].dateDonated == searchText|| 
-//             items[i].donatedBy == searchText){
-//             searchDisplay.push(items[i]);
+            items[i].itemId == searchText || 
+            items[i].itemName == searchText || 
+            items[i].keywords == searchText || 
+            items[i].origin == searchText || 
+            items[i].collection == searchText || 
+            items[i].dateOfOrigin == searchText|| 
+            items[i].dateDonated == searchText|| 
+            items[i].donatedBy == searchText){
+            searchDisplay.push(items[i]);
             
         }
     }

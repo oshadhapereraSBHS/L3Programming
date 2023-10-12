@@ -20,13 +20,11 @@ class Item {
 
 function searchPage(){
     window.location.href= "search.html";
-    localStorage.setItem("searchText",document.getElementById("searchText").value)
+    var intialSearchText = document.getElementById("searchText").value;
+    var finalSeachText = intialSearchText.toLowerCase();
+    localStorage.setItem("searchText", finalSeachText)
 }
 
 function homePage(){
     window.location.href= "index.html"
 }
-
-
-
-

@@ -56,17 +56,17 @@ function displayArrayInContainer(data, containerId, arrayName) {
 
         resultItem.innerHTML = data[i];
 
-//         var lineBreak = document.createElement("br");
-//         container.appendChild(lineBreak);
+        var lineBreak = document.createElement("br");
+        container.appendChild(lineBreak);
 
-//         container.appendChild(checkbox);
-//         container.appendChild(resultItem);
+        container.appendChild(checkbox);
+        container.appendChild(resultItem);
 
-//         checkbox.addEventListener("click", function () {
-//             var arrayIndex = this.getAttribute("data-array-name");
-//             var arrayItem = this.getAttribute("data-array-item");
+        checkbox.addEventListener("click", function () {
+            var arrayIndex = this.getAttribute("data-array-name");
+            var arrayItem = this.getAttribute("data-array-item");
 
-//             const nestedFilters = [arrayIndex, arrayItem];
+            const nestedFilters = [arrayIndex, arrayItem];
 
 //             filters.push(nestedFilters);
 //         });

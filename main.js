@@ -1,8 +1,9 @@
 const items = [];
+const searchDisplay = [];
 
 
 class Item {
-    constructor(source, itemId, itemName, itemDescription, keywords, origin, collection, dateOfOrigin, dateDonated, donatedBy){
+    constructor(source, itemId, itemName, itemDescription, keywords, origin, collection, dateOfOrigin, dateDonated, donatedBy) {
         this.source = source;
         this.itemId = itemId;
         this.itemName = itemName;
@@ -17,83 +18,67 @@ class Item {
     }
 }
 
-const Item1 = new Item (
-    "/images/museum (1).jpg",
-    1,
-    "World War I Plaque",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    ["Gallipoli","War"],
-    "New Zealand",
-    "War",
-    "1981",
-    "2009",
-    "Tom Smith",
-);
+function searchPage() {
+    window.location.href = "search.html";
+
+    var intialSearchText = document.getElementById("searchText").value;
+    var finalSeachText = intialSearchText.toLowerCase();
+    localStorage.setItem("searchText", finalSeachText)
 
 
-const Item2 = new Item (
-    "/images/museum (13).jpg",
-    2,
-    "Stained Glass Painting",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    ["Art","Stained glass"],
-    "New Zealand",
-    "Art",
-    "1941",
-    "1988",
-    "Frank Peters",
-);
-
-const Item3 = new Item (
-    "/images/museum (16).jpg",
-    3,
-    "D Grant, SBHS Headmaster",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    ["War","Headmaster"],
-    "New Zealand",
-    "War",
-    "1918",
-    "1949",
-    "William Te Amo",
-);
 
 
-window.onload = function() {
 
-    pushContent();
-    fillContents();
+}
+
+function homePage() {
+    window.location.href = "index.html"
 }
 
 
-function pushContent() {
-    
-    items.push(Item1);
-    items.push(Item2);
-    items.push(Item3);
-}
-
-function fillContents() {
-
-
-    for (var i=0; i<items.length; i++) {
-        var main = document.getElementById("content");
-        var list = document.createElement("li");
-        var image = document.createElement("img");
-        var heading = document.createElement("h3");
-        var subheading = document.createElement("p");
-        var date = document.createElement("p")
-
-        main.appendChild(list);
-
-        list.appendChild(image);
-        list.appendChild(heading);
-        list.appendChild(subheading);
-        list.appendChild(date);
-    
-        image.src = items[i].source;
-        heading.innerHTML = items[i].itemName;
-        subheading.innerHTML = items[i].collection;
-        date.innerHTML = items[i].dateOfOrigin;
+function checkKeyPress(event) {
+    if (event.keyCode === 13) {
+        //event.preventDefault();
+        searchPage();
     }
-    
 }
+// const filters = [];
+
+// function displayArrayInContainer(data, containerId, arrayName) {
+//     const container = document.getElementById(containerId);
+//     container.style.fontWeight = 'bold';
+
+//     for (var i = 0; i < data.length; i++) {
+//         var checkbox = document.createElement("input");
+//         checkbox.type = "checkbox";
+
+//         checkbox.setAttribute("data-array-name", arrayName);
+//         checkbox.setAttribute("data-array-item", data[i]);
+
+//         var resultItem = document.createElement("label");
+//         resultItem.classList.add('p-text');
+
+//         resultItem.innerHTML = data[i];
+
+//         var lineBreak = document.createElement("br");
+//         container.appendChild(lineBreak);
+
+//         container.appendChild(checkbox);
+//         container.appendChild(resultItem);
+
+
+//         checkbox.addEventListener("click", function () {
+//             var arrayIndex = this.getAttribute("data-array-name");
+//             var arrayItem = this.getAttribute("data-array-item");
+
+
+//             const nestedFilters = [arrayIndex, arrayItem];
+
+//             filters.push(nestedFilters);
+
+//         });
+
+
+//     }
+
+// }

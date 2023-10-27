@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
     <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="search.js"></script>
     <script type="text/javascript" src="metadata.js"></script>
     <link rel="stylesheet" href="styles.css">
 
@@ -14,15 +15,22 @@
 <body>
     <div class="container">
         <div class="logoDiv">
-            <img id="logo" src="/images/logo.png">
+            <img id="logo" src="/images/logo.png" onclick="homePage()">
         </div>
         <div class="navDiv">
-            <input type="text" placeholder="Search..">
+            <input id="searchText" type="text" placeholder="Search..">
+            <button type="submit"><img id="buttonIcon" src="images/search.png" onclick="searchPage()"></button>
             <a href="contact.html">Contact</a>
+        </div>
+        <div class="filterDiv">
         </div>
         <div class="itemsDiv">
             <ul id="content">
             </ul>
+        </div>
+
+        <div class="overlayDiv">
+
         </div>
 
     </div>

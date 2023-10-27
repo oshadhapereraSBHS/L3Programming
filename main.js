@@ -41,8 +41,8 @@ function checkKeyPress(event) {
 const filters = [];
 
 function displayArrayInContainer(data, containerId, arrayName) {
-//     const container = document.getElementById(containerId);
-//     container.style.fontWeight = 'bold';
+    const container = document.getElementById(containerId);
+    container.style.fontWeight = 'bold';
 
 //     for (var i = 0; i < data.length; i++) {
 //         var checkbox = document.createElement("input");

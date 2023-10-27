@@ -68,7 +68,7 @@ function displayArrayInContainer(data, containerId, arrayName) {
 
             const nestedFilters = [arrayIndex, arrayItem];
 
-//             filters.push(nestedFilters);
-//         });
+            filters.push(nestedFilters);
+        });
     }
 }

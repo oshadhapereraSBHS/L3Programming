@@ -54,7 +54,7 @@ function displayArrayInContainer(data, containerId, arrayName) {
         var resultItem = document.createElement("label");
         resultItem.classList.add('p-text');
 
-//         resultItem.innerHTML = data[i];
+        resultItem.innerHTML = data[i];
 
 //         var lineBreak = document.createElement("br");
 //         container.appendChild(lineBreak);

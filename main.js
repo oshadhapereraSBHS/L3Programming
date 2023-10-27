@@ -48,11 +48,11 @@ function displayArrayInContainer(data, containerId, arrayName) {
         var checkbox = document.createElement("input");
         checkbox.type = "checkbox";
 
-//         checkbox.setAttribute("data-array-name", arrayName);
-//         checkbox.setAttribute("data-array-item", data[i]);
+        checkbox.setAttribute("data-array-name", arrayName);
+        checkbox.setAttribute("data-array-item", data[i]);
 
-//         var resultItem = document.createElement("label");
-//         resultItem.classList.add('p-text');
+        var resultItem = document.createElement("label");
+        resultItem.classList.add('p-text');
 
 //         resultItem.innerHTML = data[i];
 

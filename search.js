@@ -117,9 +117,9 @@ function filter() {
 
     for (var i = 0; i < searchDisplay.length; i++) {
         for (var x = 0; x < filters.length; x++) {
-//             var newFilter = filters[x][1].toLowerCase()
-//             if (searchDisplay[i].keywords[0].toLowerCase() == newFilter || searchDisplay[i].keywords[1].toLowerCase() == newFilter) {
-//             } else {
+            var newFilter = filters[x][1].toLowerCase()
+            if (searchDisplay[i].keywords[0].toLowerCase() == newFilter || searchDisplay[i].keywords[1].toLowerCase() == newFilter) {
+            } else {
 //                 document.getElementById("content").removeChild(document.getElementById("content").children[i])
 //                 searchDisplay.splice(i, 1);
 //                 i--;

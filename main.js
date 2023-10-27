@@ -38,9 +38,9 @@ function checkKeyPress(event) {
         searchPage();
     }
 }
-// const filters = [];
+const filters = [];
 
-// function displayArrayInContainer(data, containerId, arrayName) {
+function displayArrayInContainer(data, containerId, arrayName) {
 //     const container = document.getElementById(containerId);
 //     container.style.fontWeight = 'bold';
 
@@ -71,4 +71,4 @@ function checkKeyPress(event) {
 //             filters.push(nestedFilters);
 //         });
 //     }
-// }
+}

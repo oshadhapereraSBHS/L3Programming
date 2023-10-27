@@ -44,9 +44,9 @@ function displayArrayInContainer(data, containerId, arrayName) {
     const container = document.getElementById(containerId);
     container.style.fontWeight = 'bold';
 
-//     for (var i = 0; i < data.length; i++) {
-//         var checkbox = document.createElement("input");
-//         checkbox.type = "checkbox";
+    for (var i = 0; i < data.length; i++) {
+        var checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
 
 //         checkbox.setAttribute("data-array-name", arrayName);
 //         checkbox.setAttribute("data-array-item", data[i]);
@@ -70,5 +70,5 @@ function displayArrayInContainer(data, containerId, arrayName) {
 
 //             filters.push(nestedFilters);
 //         });
-//     }
+    }
 }

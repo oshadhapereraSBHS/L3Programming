@@ -25,10 +25,6 @@ function searchPage() {
     var finalSeachText = intialSearchText.toLowerCase();
     localStorage.setItem("searchText", finalSeachText)
 
-
-
-
-
 }
 
 function homePage() {
@@ -38,7 +34,7 @@ function homePage() {
 
 function checkKeyPress(event) {
     if (event.keyCode === 13) {
-        //event.preventDefault();
+        event.preventDefault();
         searchPage();
     }
 }
@@ -66,19 +62,13 @@ function checkKeyPress(event) {
 //         container.appendChild(checkbox);
 //         container.appendChild(resultItem);
 
-
 //         checkbox.addEventListener("click", function () {
 //             var arrayIndex = this.getAttribute("data-array-name");
 //             var arrayItem = this.getAttribute("data-array-item");
 
-
 //             const nestedFilters = [arrayIndex, arrayItem];
 
 //             filters.push(nestedFilters);
-
 //         });
-
-
 //     }
-
 // }

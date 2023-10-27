@@ -104,13 +104,13 @@ function fillFilters() {
     displayArrayInContainer(newCollection, "collectionHeadingId", "collection");
     displayArrayInContainer(newDateOfOrigin, "dateOfOriginHeadingId", "dateOfOrigin");
 
-//     for (var i = 0; i < filters.length; i++) {
-//         if (filters[i][0].length === 0) {
-//             document.getElementById(filters[i][1]).style.display = 'none';
-//             document.getElementById("filterButton").style.display = 'none';
-//         }
-//     }
-// }
+    for (var i = 0; i < filters.length; i++) {
+        if (filters[i][0].length === 0) {
+            document.getElementById(filters[i][1]).style.display = 'none';
+            document.getElementById("filterButton").style.display = 'none';
+        }
+    }
+}
 
 
 // function filter() {

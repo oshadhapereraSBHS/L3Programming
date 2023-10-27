@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,19 +13,48 @@
 
     <title>SBHS Museum</title>
 </head>
+
 <body>
     <div class="container">
-        <div class="logoDiv">
-            <img id="logo" src="/images/logo.png" onclick="homePage()">
-        </div>
+
         <div class="navDiv">
-            <input id="searchText" type="text" placeholder="Search..">
-            <button type="submit"><img id="buttonIcon" src="images/search.png" onclick="searchPage()"></button>
-            <a href="contact.html">Contact</a>
+            <div class="logoDiv">
+                <img id="logo" src="/images/logo.png" onclick="homePage()">
+            </div>
+            <div class="bottomNav">
+
+                <div class="aboutLinkDiv">
+                    <a id="aboutLink" href="index.html">Home</a>
+                </div>
+
+                <div class="searchLinkDiv">
+                    <a id="searchLink" id="onSearchPage" href="search.html">Search</a>
+                </div>
+
+                <div class="contactLinkDiv">
+                    <a id="contactLink" href="contact.html">Contact</a>
+                </div>
+            </div>
+
+            <div class="searchBarDiv">
+                <input id="searchText" type="text" placeholder="Search.." onkeypress="checkKeyPress(event)">
+                <button type="submit"><img id="buttonIcon" src="images/search.png" onclick="searchPage()"></button>
+       
+            </div>
         </div>
-        <div class="filterDiv">
-        </div>
-        <div class="itemsDiv">
+
+       
+        
+
+        <div class="itemsDiv" id="itemsDivForSearch">
+            <div class="filterDiv">
+
+                <p id="keywordHeadingId">Keywords</p>
+                <p id="originHeadingId">Origin</p>
+                <p id="collectionHeadingId">Collection</p>
+                <p id="dateOfOriginHeadingId">Date of Origin</p>
+    <button id="filterButton" onclick="filter()">Apply</button>
+            </div>
             <ul id="content">
             </ul>
         </div>
@@ -35,4 +65,5 @@
 
     </div>
 </body>
+
 </html>

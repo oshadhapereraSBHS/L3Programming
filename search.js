@@ -120,12 +120,12 @@ function filter() {
             var newFilter = filters[x][1].toLowerCase()
             if (searchDisplay[i].keywords[0].toLowerCase() == newFilter || searchDisplay[i].keywords[1].toLowerCase() == newFilter) {
             } else {
-//                 document.getElementById("content").removeChild(document.getElementById("content").children[i])
-//                 searchDisplay.splice(i, 1);
-//                 i--;
-//             }
-//         }
-//     }
+                document.getElementById("content").removeChild(document.getElementById("content").children[i])
+                searchDisplay.splice(i, 1);
+                i--;
+            }
+        }
+    }
 
-// }
+}
 

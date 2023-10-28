@@ -115,15 +115,22 @@ function fillFilters() {
 
 function filter() {
 
-    for (var i = 0; i < searchDisplay.length; i++) {
+    for (var i = searchDisplay.length - 1; i >= 0; i--) {
+        var shouldRemove = true; // Initialize a flag
+
         for (var x = 0; x < filters.length; x++) {
+
             var newFilter = filters[x][1].toLowerCase()
-            if (searchDisplay[i].keywords[0].toLowerCase() == newFilter || searchDisplay[i].keywords[1].toLowerCase() == newFilter) {
-            } else {
-                document.getElementById("content").removeChild(document.getElementById("content").children[i])
-                searchDisplay.splice(i, 1);
-                i--;
-            }
+            if (searchDisplay[i].keywords[0].toLowerCase() == newFilter || searchDisplay[i].keywords[1].toLowerCase() == newFilter || searchDisplay[i].origin.toLowerCase() == newFilter || searchDisplay[i].collection.toLowerCase() == newFilter || searchDisplay[i].dateOfOrigin.toLowerCase() == newFilter) {
+                shouldRemove = false; // At least one filter matched
+                break; // No need to check other filters for this element
+
+            } 
+        }
+
+        if (shouldRemove) {
+            document.getElementById("content").removeChild(document.getElementById("content").children[i]);
+            searchDisplay.splice(i, 1);
         }
     }
 

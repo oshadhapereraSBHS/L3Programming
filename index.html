@@ -1,29 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <script type="text/javascript" src="gallery.js"></script>
     <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="metadata.js"></script>
     <link rel="stylesheet" href="styles.css">
 
     <title>SBHS Museum</title>
 </head>
+
 <body>
     <div class="container">
-        <div class="logoDiv">
-            <img id="logo" src="/images/logo.png">
-        </div>
+
         <div class="navDiv">
-            <input type="text" placeholder="Search..">
-            <a href="contact.html">Contact</a>
+            <div class="logoDiv">
+                <img id="logo" src="/images/logo.png" onclick="homePage()">
+            </div>
+            <div class="bottomNav">
+
+                <div class="aboutLinkDiv">
+                    <a id="aboutLink" href="index.html">Home</a>
+                </div>
+
+                <div class="searchLinkDiv">
+                    <a id="searchLink" href="search.html">Search</a>
+                </div>
+
+                <div class="contactLinkDiv">
+                    <a id="contactLink" href="contact.html">Contact</a>
+                </div>
+            </div>
+
+
         </div>
         <div class="itemsDiv">
-            <ul id="content">
+            <ul id="gallery">
             </ul>
         </div>
 
     </div>
 </body>
+
 </html>

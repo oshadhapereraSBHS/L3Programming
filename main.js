@@ -25,10 +25,6 @@ function searchPage() {
     var finalSeachText = intialSearchText.toLowerCase();
     localStorage.setItem("searchText", finalSeachText)
 
-
-
-
-
 }
 
 function homePage() {
@@ -38,47 +34,41 @@ function homePage() {
 
 function checkKeyPress(event) {
     if (event.keyCode === 13) {
-        //event.preventDefault();
+        event.preventDefault();
         searchPage();
     }
 }
-// const filters = [];
+const filters = [];
 
-// function displayArrayInContainer(data, containerId, arrayName) {
-//     const container = document.getElementById(containerId);
-//     container.style.fontWeight = 'bold';
+function displayArrayInContainer(data, containerId, arrayName) {
+    const container = document.getElementById(containerId);
+    container.style.fontWeight = 'bold';
 
-//     for (var i = 0; i < data.length; i++) {
-//         var checkbox = document.createElement("input");
-//         checkbox.type = "checkbox";
+    for (var i = 0; i < data.length; i++) {
+        var checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
 
-//         checkbox.setAttribute("data-array-name", arrayName);
-//         checkbox.setAttribute("data-array-item", data[i]);
+        checkbox.setAttribute("data-array-name", arrayName);
+        checkbox.setAttribute("data-array-item", data[i]);
 
-//         var resultItem = document.createElement("label");
-//         resultItem.classList.add('p-text');
+        var resultItem = document.createElement("label");
+        resultItem.classList.add('p-text');
 
-//         resultItem.innerHTML = data[i];
+        resultItem.innerHTML = data[i];
 
-//         var lineBreak = document.createElement("br");
-//         container.appendChild(lineBreak);
+        var lineBreak = document.createElement("br");
+        container.appendChild(lineBreak);
 
-//         container.appendChild(checkbox);
-//         container.appendChild(resultItem);
+        container.appendChild(checkbox);
+        container.appendChild(resultItem);
 
+        checkbox.addEventListener("click", function () {
+            var arrayIndex = this.getAttribute("data-array-name");
+            var arrayItem = this.getAttribute("data-array-item");
 
-//         checkbox.addEventListener("click", function () {
-//             var arrayIndex = this.getAttribute("data-array-name");
-//             var arrayItem = this.getAttribute("data-array-item");
+            const nestedFilters = [arrayIndex, arrayItem];
 
-
-//             const nestedFilters = [arrayIndex, arrayItem];
-
-//             filters.push(nestedFilters);
-
-//         });
-
-
-//     }
-
-// }
+            filters.push(nestedFilters);
+        });
+    }
+}

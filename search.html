@@ -16,8 +16,10 @@
 
 <body>
     <div class="container" id="container">
-
+        <div id="backgroundFiller1"></div>
+        <div id="backgroundFiller2"></div>
         <div class="navDiv">
+
             <div class="logoDiv">
                 <img id="logo" src="/images/logo.png" onclick="homePage()">
             </div>
@@ -26,49 +28,57 @@
                 <div class="aboutLinkDiv">
                     <a id="aboutLink" href="index.html">Home</a>
                 </div>
-
+                <div class="contactLinkDiv">
+                    <a id="contactLink" href="gallery.html">Gallery</a>
+                </div>
                 <div class="searchLinkDiv">
-                    <a id="searchLink" id="onSearchPage" href="search.html">Search</a>
+                    <a id="searchLink" href="search.html">Catalogue</a>
                 </div>
 
                 <div class="contactLinkDiv">
                     <a id="contactLink" href="contact.html">Contact</a>
                 </div>
+
             </div>
 
-            <div class="searchBarDiv">
-                <input id="searchText" type="text" placeholder="Search.." onkeypress="checkKeyPress(event)">
-                <button type="submit"><img id="buttonIcon" src="images/search.png" onclick="searchPage()"></button>
-       
-            </div>
         </div>
 
-       
-        
+
+
 
         <div class="itemsDiv" id="itemsDivForSearch">
-            <div class="filterDiv">
 
+            <div class="filterDiv">
+<h3>Filters</h3>
                 <p id="keywordHeadingId">Keywords</p>
                 <p id="originHeadingId">Origin</p>
                 <p id="collectionHeadingId">Collection</p>
                 <p id="dateOfOriginHeadingId">Date of Origin</p>
-    <button id="filterButton" onclick="filter()">Apply</button><br><br>
-    <button id="removeButton" onclick="remove()">Remove Filters</button>
+                <button id="filterButton" onclick="filter()">Apply</button><br><br>
+                <button id="removeButton" onclick="remove()">Remove Filters</button>
             </div>
-            <ul id="content">
-            </ul>
+            <div id="searchTitleDiv">
+                <h1 class="pageHeading">Catalogue</h1>
+                        <div class="searchBarDiv">
+                            <input id="searchText" type="text" placeholder="Search.." onkeypress="checkKeyPress(event)">
+                            <button type="submit"><img id="buttonIcon" src="images/search.png" onclick="searchPage()"></button>
             
+                        </div>
+                        <ul id="content">
+                        </ul>
+            </div>
+            
+
         </div>
 
-            
+
 
     </div>
     <div id="overlay">
         <div id="left">
             <img id="overlayImage" src="" alt="Overlay Image">
         </div>
-            
+
 
 
 
@@ -91,16 +101,16 @@
             <h4>Donated By</h4>
             <p id="itemDonatedBy"></p>
         </div>
-<div>
-    <span id="closeButton">&times;</span>
-</div>
-    
+        <div>
+            <span id="closeButton">&times;</span>
+        </div>
 
-        
-        
 
-    
-    </div>  
+
+
+
+
+    </div>
 </body>
 
 </html>

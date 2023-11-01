@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <script type="text/javascript" src="gallery.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="metadata.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <title>SBHS Museum</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="backgroundFiller1"></div>
+        <div id="backgroundFiller2"></div>
+        <div class="navDiv">
+
+            <div class="logoDiv">
+                <img id="logo" src="/images/logo.png" onclick="homePage()">
+            </div>
+            <div class="bottomNav">
+
+                <div class="aboutLinkDiv">
+                    <a id="aboutLink" href="index.html">Home</a>
+                </div>
+                <div class="contactLinkDiv">
+                    <a id="contactLink" href="gallery.html">Gallery</a>
+                </div>
+                <div class="searchLinkDiv">
+                    <a id="searchLink" href="search.html">Catalogue</a>
+                </div>
+
+                <div class="contactLinkDiv">
+                    <a id="contactLink" href="contact.html">Contact</a>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <div class="itemsDiv">
+            <h1 class="pageHeading">Gallery</h1>
+            <ul id="gallery">
+            </ul>
+        </div>
+        <div id="slideshow-modal" class="modal">
+            <span class="close" onclick="closeSlideshow()">&times;</span>
+            <img id="modal-image" class="modal-content" alt="Slideshow Image">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

@@ -3,8 +3,23 @@ window.onload = function () {
     check();
     fillContents();
     fillFilters();
+document.getElementById("removeButton").style.display = "none";
+
+document.getElementById("overlay").style.display = "none"
+
+fillArray()
 
 }
+function fillArray(){
+for (var i = 0; i < searchDisplay.length; i++) {
+    imageSources.push(searchDisplay[i].source);
+}
+
+newPage();
+}
+
+
+
 
 var searchText = localStorage.getItem("searchText")
 
@@ -114,6 +129,7 @@ function fillFilters() {
 
 
 function filter() {
+    document.getElementById("removeButton").style.display = "block";
 
     for (var i = searchDisplay.length - 1; i >= 0; i--) {
         var shouldRemove = true; // Initialize a flag
@@ -134,5 +150,61 @@ function filter() {
         }
     }
 
+   
+
+}
+const imageSources = [];
+ 
+    
+function remove(){
+    location.reload();
 }
 
+// function newPage() {
+//     const imageList = document.getElementById("content");
+//     const overlay = document.getElementById("overlay");
+//     const overlayImage = document.getElementById("overlayImage");
+//     const closeButton = document.getElementById("closeButton");
+
+//     imageList.addEventListener("click", function (event) {
+//         const target = event.target;
+//         const listItem = findClosestListItem(target);
+
+//         if (listItem) {
+//             const clickedImageSrc = listItem.querySelector("img").src;
+
+//             const i = Array.from(imageList.children).indexOf(listItem);
+
+//             if (i >= 0 && i < searchDisplay.length) {
+//                 overlayImage.src = clickedImageSrc;
+//                 // Set other details as needed
+//                 overlay.style.display = "grid";
+//                 document.getElementById("container").style.display = "none";
+//                 document.getElementById("itemTitle").innerHTML = searchDisplay[i].itemName; // Set item title
+//             document.getElementById("itemId").innerHTML = searchDisplay[i].itemId
+//             document.getElementById("itemDescription").innerHTML = searchDisplay[i].itemDescription
+//             document.getElementById("itemKeywords").innerHTML = searchDisplay[i].keywords[0] + ", " + searchDisplay[i].keywords[1]
+//             document.getElementById("itemCollection").innerHTML = searchDisplay[i].collection
+//             document.getElementById("itemOrigin").innerHTML = searchDisplay[i].origin
+//             document.getElementById("itemDateOfOrigin").innerHTML = searchDisplay[i].dateOfOrigin
+//             document.getElementById("itemDateDonated").innerHTML = searchDisplay[i].dateDonated
+//             document.getElementById("itemDonatedBy").innerHTML = searchDisplay[i].donatedBy
+//             }
+//         }
+//     });
+
+//     closeButton.addEventListener("click", function () {
+//         overlay.style.display = "none";
+//         document.getElementById("container").style.display = "block";
+//     });
+
+//     function findClosestListItem(element) {
+//         while (element) {
+//             if (element.tagName === "LI") {
+//                 return element;
+//             }
+//             element = element.parentElement;
+//         }
+//         return null;
+//     }
+// }

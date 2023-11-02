@@ -210,8 +210,8 @@ function contactSubmit() {
     var required1 = document.getElementById("required1").value;
     var required2 = document.getElementById("required2").value;
     var required3 = document.getElementById("required3").value;
-    // if (required1 == null || required1 == "") {
-    //     alert("Please your first name")
+    if (required1 == null || required1 == "") {
+        alert("Please your first name")
     // } else if (required2 == null || required2 == "") {
     //     alert("Please your email address")
     // } else if (required3 == null || required3 == "") {

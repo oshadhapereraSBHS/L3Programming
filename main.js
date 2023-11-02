@@ -208,7 +208,7 @@ function pushContent() {
 
 function contactSubmit() {
     var required1 = document.getElementById("required1").value;
-    // var required2 = document.getElementById("required2").value;
+    var required2 = document.getElementById("required2").value;
     // var required3 = document.getElementById("required3").value;
     // if (required1 == null || required1 == "") {
     //     alert("Please your first name")

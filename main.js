@@ -84,107 +84,12 @@ function redirectToCatalogue() {
 function redirectToContact() {
     window.location.href = "contact.html";
 }
-var currentIndex = 0; // Track the current index of the displayed image
 
-function openFullscreenImage(index) {
-    var gallery = document.querySelector(".gallery");
-    var heading = document.querySelector(".pageHeading");
-
-    var backgroundFiller1 = document.getElementById("backgroundFiller1");
-    var backgroundFiller2 = document.getElementById("backgroundFiller2");
-    var navDiv = document.querySelector(".navDiv");
-
-
-    var fullscreenImage = document.querySelector(".fullscreen-image");
-    var image = fullscreenImage.querySelector("img");
-    image.src = items[index].source;
-    fullscreenImage.style.display = "grid";
-    gallery.style.display = "none";
-    heading.style.display = "none";
-
-    // Hide the divs
-    backgroundFiller1.style.display = "none";
-    backgroundFiller2.style.display = "none";
-    navDiv.style.display = "none";
-
-
-    currentIndex = index;
-}
-
-// Function to close the fullscreen image
-function closeFullscreenImage() {
-    var gallery = document.querySelector(".gallery");
-    var fullscreenImage = document.querySelector(".fullscreen-image");
-    fullscreenImage.style.display = "none";
-    gallery.style.display = "grid";
-
-
-    var backgroundFiller1 = document.getElementById("backgroundFiller1");
-    var backgroundFiller2 = document.getElementById("backgroundFiller2");
-    var navDiv = document.querySelector(".navDiv");
-
-    // Hide the divs
-    backgroundFiller1.style.display = "grid";
-    backgroundFiller2.style.display = "grid";
-    navDiv.style.display = "grid";
-}
-// Function to display the previous image
-function showPreviousImage() {
-    if (currentIndex > 0) {
-        currentIndex--;
-    } else {
-        currentIndex = items.length - 1; // Reset to the last image if at the first image
-    }
-    openFullscreenImage(currentIndex);
-}
-
-// Function to display the next image
-function showNextImage() {
-    if (currentIndex < items.length - 1) {
-        currentIndex++;
-    } else {
-        currentIndex = 0; // Reset to the first image if at the end
-    }
-    openFullscreenImage(currentIndex);
-}
-// Define your fillGallery function
-function fillGallery() {
-    var gallery = document.querySelector(".gallery");
-    for (var i = 0; i < items.length; i++) {
-        var list = document.createElement("div");
-        list.className = "gallery-item";
-        var image = document.createElement("img");
-        image.src = items[i].source;
-        image.alt = "Image " + (i + 1);
-        list.appendChild(image);
-        gallery.appendChild(list);
-        // Add a click event listener to each gallery item
-        list.addEventListener("click", (function (index) {
-            return function () {
-                openFullscreenImage(index);
-            };
-        })(i));
-    }
-}
 
 
 window.onload = function () {
     pushContent();
     fillGallery();
-    // Close full screen image when clicking on the close icon
-    var closeIcon = document.querySelector(".close-icon");
-    if (closeIcon) {
-        closeIcon.addEventListener("click", closeFullscreenImage);
-    }
-    // Add event listeners to the left and right arrows
-    var arrowLeft = document.querySelector(".arrow-left");
-    var arrowRight = document.querySelector(".arrow-right");
-    if (arrowLeft) {
-        arrowLeft.addEventListener("click", showPreviousImage);
-    }
-    if (arrowRight) {
-        arrowRight.addEventListener("click", showNextImage);
-    }
 }
 
 

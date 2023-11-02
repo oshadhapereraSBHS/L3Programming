@@ -1,30 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
     <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="search.js"></script>
     <script type="text/javascript" src="metadata.js"></script>
     <link rel="stylesheet" href="styles.css">
 
     <title>SBHS Museum</title>
 </head>
+
 <body>
-    <div class="container">
-        <div class="logoDiv">
-            <img id="logo" src="/images/logo.png">
-        </div>
+    <div class="container" id="container">
+        <div id="backgroundFiller1"></div>
+        <div id="backgroundFiller2"></div>
         <div class="navDiv">
-            <input type="text" placeholder="Search..">
-            <a href="contact.html">Contact</a>
+
+            <div class="logoDiv">
+                <img id="logo" src="/images/logo.png" onclick="homePage()">
+            </div>
+            <div class="bottomNav">
+
+                <div class="aboutLinkDiv">
+                    <a id="aboutLink" href="index.html">Home</a>
+                </div>
+                <div class="contactLinkDiv">
+                    <a id="contactLink" href="gallery.html">Gallery</a>
+                </div>
+                <div class="searchLinkDiv">
+                    <a id="searchLink" href="search.html">Catalogue</a>
+                </div>
+
+                <div class="contactLinkDiv">
+                    <a id="contactLink" href="contact.html">Contact</a>
+                </div>
+
+            </div>
+
         </div>
-        <div class="itemsDiv">
-            <ul id="content">
-            </ul>
+
+
+
+
+        <div class="itemsDiv" id="itemsDivForSearch">
+
+            <div class="filterDiv">
+<h3>Filters</h3>
+                <p id="keywordHeadingId">Keywords</p>
+                <p id="originHeadingId">Origin</p>
+                <p id="collectionHeadingId">Collection</p>
+                <p id="dateOfOriginHeadingId">Date of Origin</p>
+                <button id="filterButton" onclick="filter()">Apply</button><br><br>
+                <button id="removeButton" onclick="remove()">Remove Filters</button>
+            </div>
+            <div id="searchTitleDiv">
+                <h1 class="pageHeading">Catalogue</h1>
+                        <div class="searchBarDiv">
+                            <input id="searchText" type="text" placeholder="Search.." onkeypress="checkKeyPress(event)">
+                            <button type="submit"><img id="buttonIcon" src="images/search.png" onclick="searchPage()"></button>
+            
+                        </div>
+                        <ul id="content">
+                        </ul>
+            </div>
+            
+
         </div>
+
+
+
+    </div>
+    <div id="overlay">
+        <div id="left">
+            <img id="overlayImage" src="" alt="Overlay Image">
+        </div>
+
+
+
+
+        <div id="right">
+            <h2 id="itemTitle"></h2>
+            <h4>Item ID</h4>
+            <p id="itemId"></p>
+            <h4>Description</h4>
+            <p id="itemDescription"></p>
+            <h4>Keywords</h4>
+            <p id="itemKeywords"></p>
+            <h4>Collection</h4>
+            <p id="itemCollection"></p>
+            <h4>Origin</h4>
+            <p id="itemOrigin"></p>
+            <h4>Date of Origin</h4>
+            <p id="itemDateOfOrigin"></p>
+            <h4>Date Donated</h4>
+            <p id="itemDateDonated"></p>
+            <h4>Donated By</h4>
+            <p id="itemDonatedBy"></p>
+        </div>
+        <div>
+            <span id="closeButton">&times;</span>
+        </div>
+
+
+
+
+
 
     </div>
 </body>
+
 </html>

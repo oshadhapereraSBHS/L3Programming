@@ -49,29 +49,29 @@
             <div id="contactHeadingDiv">
                 <h1 class="pageHeading">Contact</h1>
             </div>
-            
 
-            <div class="col1">
-                <label for="fname">First Name</label><br>
-                <input type="text" id="firstName" name="firstName" placeholder="Your name.."><br><br>
-                <label for="fname">Email</label><br>
-                <input type="text" id="email" name="email" placeholder="Your email.."><br><br>
+
+            <div class="col1" id="col1">
+                <label for="fname">First Name*</label><br>
+                <input id="required1" type="text" id="firstName" name="firstName" placeholder="Your name.."><br><br>
+                <label for="fname">Email*</label><br>
+                <input id="required2" type="text" id="email" name="email" placeholder="Your email.."><br><br>
 
             </div>
 
-            <div class="col2">
+            <div class="col2b" id="col2">
                 <label for="lname">Last Name</label><br>
                 <input type="text" id="lastName" name="lastName" placeholder="Your last name.."><br><br>
 
-                <label for="lname">Phone</label><br>
+                <label for="phone">Phone</label><br>
                 <input type="number" id="phone" name="phone" placeholder="Your phone number.."><br><br>
 
             </div>
 
 
 
-
-            <div class="row2">
+            <div id="receivedContact"></div>
+            <div class="row2" id="row2">
                 <label for="query">Type of query</label><br>
                 <select id="query" name="query">
                     <option value="inquiry">Inquiry about collections</option>
@@ -80,16 +80,21 @@
                 </select>
                 <br><br>
 
-                <label for="subject">Message</label><br>
-                <textarea id="subject" name="subject" placeholder="Your message.." style="height:200px"></textarea>
+                <label for="subject">Message*</label><br>
+                <textarea id="required3" id="subject" name="subject" placeholder="Your message.."
+                    style="height:200px"></textarea>
                 <br><br>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" onclick="contactSubmit()">
 
             </div>
 
             <div class="col3">
 
-                <p>181 Herbert Street, <br> Invercargill <br> 9810</p>
+                <p>181 Herbert Street, Invercargill 9810.</p>
+                <a href="tel:032113003">032113003</a>
+
+                <br><br> <a href="mailto:sbhsmuseum@gmail.com">sbhsmuseum@gmail.com</a><br><br>
+
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4950.031573812349!2d168.35488340447014!3d-46.39477120270122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa9d2c4aff00c1a95%3A0xb20434a0648a3764!2sSouthland%20Boys&#39;%20High%20School!5e0!3m2!1sen!2snz!4v1698835677595!5m2!1sen!2snz"
                     style="border:0;" allowfullscreen="" loading="lazy"

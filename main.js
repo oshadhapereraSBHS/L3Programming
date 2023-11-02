@@ -1,7 +1,6 @@
 const items = [];
 const searchDisplay = [];
 
-
 class Item {
     constructor(source, itemId, itemName, itemDescription, keywords, origin, collection, dateOfOrigin, dateDonated, donatedBy) {
         this.source = source;
@@ -14,17 +13,18 @@ class Item {
         this.dateOfOrigin = dateOfOrigin;
         this.dateDonated = dateDonated;
         this.donatedBy = donatedBy;
-
     }
 }
 
 function searchPage() {
-    window.location.href = "search.html";
-
-    var intialSearchText = document.getElementById("searchText").value;
-    var finalSeachText = intialSearchText.toLowerCase();
-    localStorage.setItem("searchText", finalSeachText)
-
+    if (document.getElementById("searchText").value == null || document.getElementById("searchText").value == "") {
+        alert("Please enter a valid search text")
+    } else {
+        var intialSearchText = document.getElementById("searchText").value;
+        var finalSearchText = intialSearchText.toLowerCase();
+        localStorage.setItem("searchText", finalSearchText);
+        window.location.href = "search.html";
+    }
 }
 
 function homePage() {
@@ -73,35 +73,36 @@ function displayArrayInContainer(data, containerId, arrayName) {
     }
 }
 
-function redirectToGallery(){
+function redirectToGallery() {
     window.location.href = "gallery.html";
 }
-function redirectToCatalogue(){
-    window.location.href = "catalogue.html";
+
+function redirectToCatalogue() {
+    window.location.href = "search.html";
 }
-function redirectToContact(){
+
+function redirectToContact() {
     window.location.href = "contact.html";
 }
 
-window.onload = function() {
 
+
+window.onload = function () {
     pushContent();
-    fillGallery()
+    fillGallery();
 }
 
 
 function pushContent() {
-
-    
     items.push(Item1);
     items.push(Item2);
     items.push(Item3);
     items.push(Item4);
     items.push(Item5);
-    items.push(Item6);    
+    items.push(Item6);
     items.push(Item7);
     items.push(Item8);
-    items.push(Item9);    
+    items.push(Item9);
     items.push(Item10);
     items.push(Item11);
     items.push(Item12);
@@ -110,54 +111,20 @@ function pushContent() {
     items.push(Item15);
 }
 
-
-
-function fillGallery(){
-    console.log(items.length)
-        for (var i=0; i<items.length; i++) {
-            var main = document.getElementById("gallery");
-            var list = document.createElement("li");
-            var image = document.createElement("img");
-
-    
-            main.appendChild(list);
-    
-            list.appendChild(image);
-
-        
-            image.src = items[i].source;
-
-        }
-        
+function contactSubmit() {
+    var required1 = document.getElementById("required1").value;
+    var required2 = document.getElementById("required2").value;
+    var required3 = document.getElementById("required3").value;
+    if (required1 == null || required1 == "") {
+        alert("Please your first name")
+    // } else if (required2 == null || required2 == "") {
+    //     alert("Please your email address")
+    // } else if (required3 == null || required3 == "") {
+    //     alert("Please your message")
+    // } else {
+    //     document.getElementById("row2").style.display = "none"
+    //     document.getElementById("col2").style.display = "none"
+    //     document.getElementById("col1").style.display = "none"
+    //     document.getElementById("receivedContact").innerHTML = "Thank you for contacting us."
+    // }
 }
-
-
-function searchPage(){
-    window.location.href= "search.html"
-}
-
-
-let modalIndex = 0;
-const modal = document.getElementById('slideshow-modal');
-const modalImage = document.getElementById('modal-image');
-
-function openSlideshow(index) {
-    modal.style.display = 'block';
-    modalImage.src = items[index].source; // Set the correct image source
-    modalIndex = index;
-}
-
-function closeSlideshow() {
-    modal.style.display = 'none';
-}
-
-function plusSlides(n) {
-    modalIndex += n;
-    if (modalIndex < 0) {
-        modalIndex = items.length - 1;
-    } else if (modalIndex >= items.length) {
-        modalIndex = 0;
-    }
-    modalImage.src = items[modalIndex].source; // Set the correct image source
-}
-

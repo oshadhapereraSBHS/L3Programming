@@ -3,8 +3,24 @@ window.onload = function () {
     check();
     fillContents();
     fillFilters();
+    document.getElementById("removeButton").style.display = "none";
+
+    document.getElementById("overlay").style.display = "none"
+
+    fillArray()
 
 }
+
+function fillArray() {
+    for (var i = 0; i < searchDisplay.length; i++) {
+        imageSources.push(searchDisplay[i].source);
+    }
+
+    newPage();
+}
+
+
+
 
 var searchText = localStorage.getItem("searchText")
 
@@ -114,18 +130,100 @@ function fillFilters() {
 
 
 function filter() {
+    document.getElementById("removeButton").style.display = "block";
 
-    for (var i = 0; i < searchDisplay.length; i++) {
+    for (var i = searchDisplay.length - 1; i >= 0; i--) {
+        var shouldRemove = true; // Initialize a flag
+
         for (var x = 0; x < filters.length; x++) {
+
             var newFilter = filters[x][1].toLowerCase()
-            if (searchDisplay[i].keywords[0].toLowerCase() == newFilter || searchDisplay[i].keywords[1].toLowerCase() == newFilter) {
-            } else {
-                document.getElementById("content").removeChild(document.getElementById("content").children[i])
-                searchDisplay.splice(i, 1);
-                i--;
+            if (searchDisplay[i].keywords[0].toLowerCase() == newFilter || searchDisplay[i].keywords[1].toLowerCase() == newFilter || searchDisplay[i].origin.toLowerCase() == newFilter || searchDisplay[i].collection.toLowerCase() == newFilter || searchDisplay[i].dateOfOrigin.toLowerCase() == newFilter) {
+                shouldRemove = false; // At least one filter matched
+                break; // No need to check other filters for this element
+
             }
+        }
+
+        if (shouldRemove) {
+            document.getElementById("content").removeChild(document.getElementById("content").children[i]);
+            searchDisplay.splice(i, 1);
         }
     }
 
+
+
+}
+const imageSources = [];
+
+
+function remove() {
+    location.reload();
 }
 
+function newPage() {
+    // Get references to HTML elements
+    const imageList = document.getElementById("content");
+    const overlay = document.getElementById("overlay");
+    const overlayImage = document.getElementById("overlayImage");
+    const closeButton = document.getElementById("closeButton");
+
+    // Add a click event listener to the imageList container
+    imageList.addEventListener("click", function (event) {
+        // Get the clicked element within the imageList
+        const target = event.target;
+
+        // Find the closest parent <li> element from the clicked element
+        const listItem = findClosestListItem(target);
+
+        if (listItem) {
+            // Get the source of the clicked image
+            const clickedImageSrc = listItem.querySelector("img").src;
+
+            // Find the index of the clicked list item within the imageList
+            const i = Array.from(imageList.children).indexOf(listItem);
+
+            if (i >= 0 && i < searchDisplay.length) {
+                // Set the source of the overlay image
+                overlayImage.src = clickedImageSrc;
+
+                // Show the overlay
+                overlay.style.display = "grid";
+
+                // Hide the container
+                document.getElementById("container").style.display = "none";
+
+                // Set details in the overlay
+                document.getElementById("itemTitle").innerHTML = searchDisplay[i].itemName; // Set item title
+                document.getElementById("itemId").innerHTML = searchDisplay[i].itemId;
+                document.getElementById("itemDescription").innerHTML = searchDisplay[i].itemDescription;
+                document.getElementById("itemKeywords").innerHTML = searchDisplay[i].keywords[0] + ", " + searchDisplay[i].keywords[1];
+                document.getElementById("itemCollection").innerHTML = searchDisplay[i].collection;
+                document.getElementById("itemOrigin").innerHTML = searchDisplay[i].origin;
+                document.getElementById("itemDateOfOrigin").innerHTML = searchDisplay[i].dateOfOrigin;
+                document.getElementById("itemDateDonated").innerHTML = searchDisplay[i].dateDonated;
+                document.getElementById("itemDonatedBy").innerHTML = searchDisplay[i].donatedBy;
+            }
+        }
+    });
+
+    // Add a click event listener to the closeButton
+    closeButton.addEventListener("click", function () {
+        // Hide the overlay
+        overlay.style.display = "none";
+
+        // Show the container
+        document.getElementById("container").style.display = "block";
+    });
+
+    // Helper function to find the closest <li> element in the DOM hierarchy
+    function findClosestListItem(element) {
+        while (element) {
+            if (element.tagName === "LI") {
+                return element;
+            }
+            element = element.parentElement;
+        }
+        return null;
+    }
+}

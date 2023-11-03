@@ -3,75 +3,84 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon for the browser tab -->
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <!-- External JavaScript files for functionality -->
     <script type="text/javascript" src="gallery.js"></script>
     <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript" src="metadata.js"></script>
+    <!-- External CSS file for styling -->
     <link rel="stylesheet" href="styles.css">
 
     <title>SBHS Museum</title>
 </head>
 
 <body>
+    <!-- Page container -->
     <div class="container">
-<div id="backgroundFiller1"></div>
-<div id="backgroundFiller2"></div>
+        <!-- Background filler elements (possibly for design) -->
+        <div id="backgroundFiller1"></div>
+        <div id="backgroundFiller2"></div>
+        <!-- Navigation section -->
         <div class="navDiv">
+            <!-- Logo and home page link -->
             <div class="logoDiv">
                 <img id="logo" src="/images/logo.png" onclick="homePage()">
             </div>
             <div class="bottomNav">
-
+                <!-- Navigation links -->
                 <div class="aboutLinkDiv">
                     <a id="aboutLink" href="index.html">Home</a>
                 </div>
-                <div class="contactLinkDiv">
+                <div class="galleryLinkDiv">
                     <a id="galleryLink" href="gallery.html">Gallery</a>
                 </div>
-                <div class="searchLinkDiv">
+                <div class= "searchLinkDiv">
                     <a id="searchLink" href="search.html">Catalogue</a>
                 </div>
-
                 <div class="contactLinkDiv">
                     <a id="contactLink" href="contact.html">Contact</a>
                 </div>
-
             </div>
         </div>
 
-<div id="textHolder">
-    <div id="mainLeft">
-        <img src="/images/main image.jpg">
+        <!-- Main content section -->
+        <div id="textHolder">
+            <div id="mainLeft">
+                <!-- Main image -->
+                <img src="/images/main image.jpg">
+            </div>
+            <div id="mainRight">
+                <!-- Heading -->
+                <h3>Kia ora,</h3>
+                <!-- Introduction and information about the museum -->
+                <p>
+                    The Southland Boys' High School museum was built in 2006, and boasts an extensive collection of
+                    items that tell the story of SBHS.
+                </p>
+                <p>
+                    Countless former pupils have been remembered in their achievements, humor, pranks, and camaraderie.
+                    Sadly, there are also two Honors Boards commemorating more than 200 past students killed in both
+                    World Wars. Invercargill’s story is in there too, as well as that of the changing world which the
+                    school’s history has spanned.
+                </p>
+                <p>Our Museum is a teaching, learning, and research tool for the present boys and staff - a gift to all.
+                    Our archivist strongly feels that you can’t be involved with a school without being aware of its
+                    history. In other words, if you don’t know where you’ve been, how can you know where you’re going?
+                </p>
+                <p>
+                    This website includes a gallery, catalog, and contact page, which you can access through the
+                    navigation bar or by clicking the links below
+                </p>
+                <!-- Buttons to navigate to different pages -->
+                <button id="button1" onclick="redirectToGallery()">Gallery</button>
+                <button id="button2" onclick="redirectToCatalogue()">Catalogue</button>
+                <button id="button3" onclick="redirectToContact()">Contact</button>
+            </div>
+        </div>
     </div>
-    <div id="mainRight">
-        <h3>Kia ora,</h3>
-        <p>
-            The Southland Boys' High School museum was built in 2006, and boasts an extensive collection of items that tell the story of SBHS.
-        </p>
-        <p>
-            Countless former pupils have been remembered in their achievements, humour, pranks and camaraderie. Sadly, there are also two Honours Boards commemorating more than 200 past students killed in both World Wars. Invercargill’s story is in there too, as well as that of the changing world which the school’s history has spanned.  
-</p>
-<p>Our Museum is a teaching, learning and research tool for the present boys and staff - a gift to all. Our archivist strongly feels that you can’t be involved with a school without being aware of its history. In other words, if you don’t know where you’ve been, how can you know where you’re going? 
-
-
-        </p>
-        <p>
-
-            This website includes a gallery, catelogue and contact page, which you can access through the navigation bar or through clicking the links below
-        </p>
-
-<button id="button1" onclick="redirectToGallery()">Gallery</button>
-<button id="button2" onclick="redirectToCatalogue()">Catalogue</button>
-<button id="button3" onclick="redirectToContact()">Contact</button>
-
-
-    </div>
-</div>
-
-
-
 </body>
 
 </html>

@@ -6,72 +6,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <!-- External JavaScript files -->
     <script type="text/javascript" src="gallery.js"></script>
     <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript" src="metadata.js"></script>
+    <!-- External CSS file -->
     <link rel="stylesheet" href="styles.css">
 
     <title>SBHS Museum</title>
 </head>
 
 <body>
+    <!-- Page container -->
     <div class="container">
+        <!-- Background filler elements -->
         <div id="backgroundFiller1"></div>
         <div id="backgroundFiller2"></div>
+        <!-- Navigation section -->
         <div class="navDiv">
-
+            <!-- Logo and home page link -->
             <div class="logoDiv">
                 <img id="logo" src="/images/logo.png" onclick="homePage()">
             </div>
             <div class="bottomNav">
-
+                <!-- Navigation links -->
                 <div class="aboutLinkDiv">
                     <a id="aboutLink" href="index.html">Home</a>
                 </div>
-                <div class="contactLinkDiv">
-                    <a id="contactLink" href="gallery.html">Gallery</a>
+                <div class="galleryLinkDiv">
+                    <a id="galleryLink" href="gallery.html">Gallery</a>
                 </div>
                 <div class="searchLinkDiv">
                     <a id="searchLink" href="search.html">Catalogue</a>
                 </div>
-
                 <div class="contactLinkDiv">
                     <a id="contactLink" href="contact.html">Contact</a>
                 </div>
-
             </div>
-
-
         </div>
-
-
+        <!-- Contact form section -->
         <div class="contactDiv">
             <div id="contactHeadingDiv">
+                <!-- Page heading -->
                 <h1 class="pageHeading">Contact</h1>
             </div>
-
-
+            <!-- Columns for form inputs -->
             <div class="col1" id="col1">
+                <!-- First Name input -->
                 <label for="fname">First Name*</label><br>
                 <input id="required1" type="text" id="firstName" name="firstName" placeholder="Your name.."><br><br>
+                <!-- Email input -->
                 <label for="fname">Email*</label><br>
                 <input id="required2" type="text" id="email" name="email" placeholder="Your email.."><br><br>
-
             </div>
-
             <div class="col2b" id="col2">
+                <!-- Last Name input -->
                 <label for="lname">Last Name</label><br>
                 <input type="text" id="lastName" name="lastName" placeholder="Your last name.."><br><br>
-
+                <!-- Phone input -->
                 <label for="phone">Phone</label><br>
                 <input type="number" id="phone" name="phone" placeholder="Your phone number.."><br><br>
-
             </div>
-
-
-
+            <!-- Received contact message display -->
             <div id="receivedContact"></div>
             <div class="row2" id="row2">
+                <!-- Query type selection -->
                 <label for="query">Type of query</label><br>
                 <select id="query" name="query">
                     <option value="inquiry">Inquiry about collections</option>
@@ -79,40 +78,25 @@
                     <option value="research">Research request</option>
                 </select>
                 <br><br>
-
+                <!-- Message input -->
                 <label for="subject">Message*</label><br>
-                <textarea id="required3" id="subject" name="subject" placeholder="Your message.."
-                    style="height:200px"></textarea>
+                <textarea id="required3" id="subject" name="subject" placeholder="Your message.." style="height:200px"></textarea>
                 <br><br>
+                <!-- Submit button with JavaScript function -->
                 <input type="submit" value="Submit" onclick="contactSubmit()">
-
             </div>
-
             <div class="col3">
-
+                <!-- Contact information -->
                 <p>181 Herbert Street, Invercargill 9810.</p>
                 <a href="tel:032113003">032113003</a>
-
-                <br><br> <a href="mailto:sbhsmuseum@gmail.com">sbhsmuseum@gmail.com</a><br><br>
-
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4950.031573812349!2d168.35488340447014!3d-46.39477120270122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa9d2c4aff00c1a95%3A0xb20434a0648a3764!2sSouthland%20Boys&#39;%20High%20School!5e0!3m2!1sen!2snz!4v1698835677595!5m2!1sen!2snz"
-                    style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+                <br><br>
+                <a href="mailto:sbhsmuseum@gmail.com">sbhsmuseum@gmail.com</a><br><br>
+                <!-- Google Maps iframe -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4950.031573812349!2d168.35488340447014!3d-46.39477120270122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa9d2c4aff00c1a95%3A0xb20434a0648a3764!2sSouthland%20Boys&#39;%20High%20School!5e0!3m2!1sen!2snz!4v1698835677595!5m2!1sen!2snz"
+                    style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-
-
         </div>
-
-
-
-
-
     </div>
-
-
-
 </body>
 
 </html>

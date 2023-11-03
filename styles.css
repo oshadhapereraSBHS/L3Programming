@@ -1,18 +1,23 @@
+/* Define a custom font 'Tiemann' and specify its source file */
 @font-face {
-    font-family: 'Tiemann'; /* Choose a name for your font */
-    src: url('/fonts/Tiemann.ttf'); /* Replace with your font file's path and format */
-  }
-  @font-face {
-    font-family: 'Montserrat'; /* Choose a name for your font */
-    src: url('/fonts/Montserrat.ttf'); /* Replace with your font file's path and format */
-  }
+    font-family: 'Tiemann';
+    src: url('/fonts/Tiemann.ttf'); 
+}
 
-  .container {
+/* Define another custom font 'Montserrat' and specify its source file */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/Montserrat.ttf');
+}
+
+/* Style the container as a grid container with specified rows and columns */
+.container {
     display: grid;
     grid-template-columns: 5% 1fr 5%;
     grid-template-rows: auto;
 }
 
+/* Style unordered lists (ul) as a grid with specified rows and columns, and set list styles */
 ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -24,17 +29,18 @@ ul {
     margin-top: 5%;
 }
 
+/* Style the navigation bar as a grid container with specific rows, columns, and background color */
 .navDiv {
     grid-row: 1/2;
-    grid-column: 2/3;    
+    grid-column: 2/3;
     display: grid;
     grid-template-columns: 10% 1fr 10%;
     grid-template-rows: auto;
     background-color: rgb(221, 219, 216);
-    
+    padding-bottom: 2%;
+}
 
-padding-bottom: 2%;}
-
+/* Style the fillers on either side of the navigation bar with background colors */
 #backgroundFiller1 {
     grid-column: 1/2;
     background-color: rgb(221, 219, 216);
@@ -45,85 +51,93 @@ padding-bottom: 2%;}
     background-color: rgb(221, 219, 216);
 }
 
+/* Style the div containing the logo within the grid container */
 .logoDiv {
-grid-column: 2/3;
-margin-top: 2%;
-
+    grid-column: 2/3;
+    margin-top: 2%;
 }
 
+/* Style navigation links within the grid container */
 .bottomNav {
     grid-row: 2/3;
     grid-column: 2/3;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
     grid-template-rows: auto;
     margin-top: 2%;
-
 }
 
+/* Style navigation links including font size, background color, and transition effects */
 .bottomNav a {
     font-size: 120%;
-
     background-color: rgb(221, 219, 216);
-    position: relative; /* Position relative to create a reference point for ::before */
-    text-decoration: none; /* Remove the default unde
-    display: inline-block; /* Make it an inline-block to take the width of the text */
-  
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
 }
+
+/* Create a horizontal line effect for links on hover */
 .bottomNav a::before {
     content: '';
     position: absolute;
-    right: 50%; /* Start from the middle (right half) */
+    right: 50%;
     bottom: 0;
     width: 0;
     height: 2px;
     background-color: black;
-    transition: width 0.4s ease-in-out, right 0.4s ease-in-out; /* Add transitions for width and right */
-  font-weight: bold;
+    transition: width 0.4s ease-in-out, right 0.4s ease-in-out;
+    font-weight: bold;
 }
 
+/* Make links bold when hovered */
 .bottomNav a:hover {
     font-weight: bold;
 }
+
+/* Expand the horizontal line effect on links when hovered */
 .bottomNav a:hover::before {
     width: 100%;
-    
-    right: 0; /* Move to the right edge on hover */
-    transition: width 0.4s ease-in-out, right 0.4s ease-in-out; /* Add transitions for width and right */
-    }
+    right: 0;
+    transition: width 0.4s ease-in-out, right 0.4s ease-in-out;
+}
 
-
+/* Style catalogue items as a grid within the container */
 .itemsDiv {
     grid-row: 3/4;
     grid-column: 2/3;
-
 }
 
-#itemsDivForSearch{
+/* Create a grid for search results */
+#itemsDivForSearch {
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: auto;
 }
 
+/* Style the logo element to fit its container */
 #logo {
     width: 100%;
 }
 
+/* Set the width and height of images to 100% */
 img {
     width: 100%;
     height: 100%;
 }
 
+/* Style list items (li) as a grid */
 li {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
 }
 
+/* Limit the maximum width of button icons */
 #buttonIcon {
     max-width: 20px;
 }
 
+/* Style the contact page as a grid with specified columns and padding */
 .contactDiv {
     grid-column: 2/3;
     display: grid;
@@ -132,12 +146,12 @@ li {
     padding-left: 10%;
     padding-right: 10%;
 }
-
+/* Positioning divs in contact page */
 .col1 {
     grid-column: 1/2;
 }
 
-.col2{
+.col2 {
     grid-column: 2/3;
 }
 
@@ -150,38 +164,50 @@ li {
     grid-column: 1/3;
 }
 
-.row2 textarea, .row2 select {
+/* Style for text areas and select elements in contact page */
+.row2 textarea,
+.row2 select {
     width: 100%;
 }
-*{
+
+/* Apply styles to all elements, including text decoration, font family, and text color */
+* {
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     color: black;
 }
 
-
+/* Positioning elements in search bar div */
 .searchBarDiv {
     grid-column: 2/3;
 }
+
+/* Font weight for paragraph text */
 .p-text {
-    font-weight: lighter; /* Set font weight to normal or desired value */
+    font-weight: lighter;
 }
 
+/* Style for overlay */
 #overlay {
-
- height: 90vh;
- width: 40vw;
+    height: 80vh;
+    width: 40vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-
 }
 
+/* Height for image in overlay */
+#overlayImage {
+    height: 98vh;
+}
+
+/* Style for the close icon */
 #closeButton {
     display: inline;
     font-size: 200%;
 }
 
+/* Grid display for overlay */
 #overlay {
     display: grid;
     grid-template-columns: 5% 1fr 5% 1fr 5%;
@@ -189,14 +215,17 @@ li {
     width: 100%;
 }
 
+/* Positioning for the left button */
 #left {
     grid-column: 2/3;
 }
 
+/* Positioning for the right button */
 #right {
     grid-column: 4/5;
 }
 
+/* Style for the 'textHolder' element with margins and nested grid layout */
 #textHolder {
     grid-column: 2/3;
     display: grid;
@@ -205,60 +234,173 @@ li {
     margin-top: 5%;
 }
 
+/* Positioning for the 'mainRight' element */
 #mainRight {
     grid-column: 3/4;
 }
 
-
-#mainRight button {
-    
+/* Style for buttons and inputs */
+#mainRight button,
+#filterButton,
+#removeButton,
+.row2 input {
     border: none;
     border-radius: 0;
     color: black;
     background-color: rgb(214, 212, 212);
-    padding: 1.5%
+    padding: 1.5%;
+    font-size: 90%;
 }
 
-#mainRight button:hover {
-    font-weight: bold
+/* Apply font-weight changes on hover for buttons */
+#mainRight button:hover,
+#filterButton:hover,
+#removeButton:hover {
+    font-weight: bold;
 }
 
+/* Apply font-weight changes on hover for inputs */
+.row2 input:hover {
+    font-weight: bold;
+}
+
+/* text align for paragraphs in home page */
 #mainRight p {
     text-align: justify;
 }
 
+/* Style for the button element with a right margin */
 #button1 {
     margin-right: 26%;
 }
 
+/* Style for the button element with a left margin */
 #button3 {
-    margin-left: 26%
+    margin-left: 26%;
 }
 
+/* Style for page headings with text alignment and font family */
 .pageHeading {
     text-align: center;
     font-family: 'Tiemann';
 }
 
+/* Positioning for elements in search title div */
 #searchTitleDiv {
- grid-column: 2/3
+    grid-column: 2/3;
 }
- #searchText{
-    width: 93%;
+
+/* Height and width for search bar */
+#searchText {
+    width: 90%;
     height: 20px;
-margin: 0 
-}   
+    margin: 0;
+}
+
+/* Style for buttons within search bar with no margins */
 #searchBarDiv button {
     margin: 0;
-    
 }
+
+/* Style for headings within elements in filters */
 .filterDiv h3 {
-    margin-top: 18%;
+    margin-top: 0;
 }
+
+/* Style for iframes with a fixed height */
 iframe {
     height: 50vh;
 }
 
+/* Style for contact page heading */
 #contactHeadingDiv {
     grid-column: 1/5;
+}
+/* Inline display for overlay text */
+#right h4,
+#right p {
+    display: inline;
+}
+
+/* Style for hyperlinks on hover */
+.col3 a:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Style for the gallery images element with fixed height and width */
+#galleryImage {
+    height: 90vh;
+    width: 80%;
+}
+
+/* Fonts for 'h3' elements in overlay*/
+#mainRight h3 {
+    font-family: "Tiemann";
+    font-size: 200%;
+}
+
+/* Style for the overlay element with a grid layout */
+.fullscreenImage {
+    display: grid;
+    grid-template-columns: 20vw 1fr 20vw;
+    grid-template-rows: auto;
+}
+
+/* Style for gallery overlay element with grid positioning */
+#cell1 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+#cell2,
+#cell3,
+#cell4 {
+    grid-row: 2/3;
+}
+
+/* Gallery overlay text align */
+#cell2,
+#cell4,
+#cell1 {
+    align-self: center;
+    justify-self: center;
+}
+
+/* Style for 'i' elements in gallery overlay font size */
+#cell2 i,
+#cell4 i {
+    font-size: 200%;
+}
+
+/* Style for 'i' elements in gallery overlay with color change */
+#cell2 i:hover,
+#cell4 i:hover {
+    color: rgb(214, 212, 212);
+}
+
+/* Style for 'i' elements within gallery overlay with font size */
+#cell1 i {
+    font-size: 200%;
+}
+
+/* Height for images in catalogue */
+#content li img {
+    height: 100%;
+}
+
+/* Grid positioning for elements in catalogue heading div' */
+#catalogueHeadingDiv {
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+
+/* Right text alignment for contact navigation link*/
+.contactLinkDiv {
+    text-align: right;
+}
+
+/* Center text alignment for gallery and catalogue navigation link*/
+.galleryLinkDiv, .searchLinkDiv {
+    text-align: center;
 }

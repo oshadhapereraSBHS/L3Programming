@@ -3,53 +3,58 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon for the browser tab -->
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <!-- External JavaScript files for functionality -->
     <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript" src="search.js"></script>
     <script type="text/javascript" src="metadata.js"></script>
+    <!-- External CSS file for styling -->
     <link rel="stylesheet" href="styles.css">
 
     <title>SBHS Museum</title>
 </head>
 
 <body>
+    <!-- Page container -->
     <div class="container" id="container">
+        <!-- Background filler elements (possibly for design) -->
         <div id="backgroundFiller1"></div>
         <div id="backgroundFiller2"></div>
+        <!-- Navigation section -->
         <div class="navDiv">
-
+            <!-- Logo and home page link -->
             <div class="logoDiv">
                 <img id="logo" src="/images/logo.png" onclick="homePage()">
             </div>
             <div class="bottomNav">
-
+                <!-- Navigation links -->
                 <div class="aboutLinkDiv">
                     <a id="aboutLink" href="index.html">Home</a>
                 </div>
-                <div class="contactLinkDiv">
-                    <a id="contactLink" href="gallery.html">Gallery</a>
+                <div class="galleryLinkDiv">
+                    <a id="galleryLink" href="gallery.html">Gallery</a>
                 </div>
                 <div class="searchLinkDiv">
                     <a id="searchLink" href="search.html">Catalogue</a>
                 </div>
-
                 <div class="contactLinkDiv">
                     <a id="contactLink" href="contact.html">Contact</a>
                 </div>
-
             </div>
-
         </div>
 
-
-
-
+        <!-- Catalogue section -->
         <div class="itemsDiv" id="itemsDivForSearch">
-
+            <!-- Catalogue heading -->
+            <div id="catalogueHeadingDiv">
+                <h1 class="pageHeading">Catalogue</h1>
+            </div>
             <div class="filterDiv">
-<h3>Filters</h3>
+                <!-- Filters section -->
+                <h3 id="filtersHeading">Filters</h3>
                 <p id="keywordHeadingId">Keywords</p>
                 <p id="originHeadingId">Origin</p>
                 <p id="collectionHeadingId">Collection</p>
@@ -58,58 +63,47 @@
                 <button id="removeButton" onclick="remove()">Remove Filters</button>
             </div>
             <div id="searchTitleDiv">
-                <h1 class="pageHeading">Catalogue</h1>
-                        <div class="searchBarDiv">
-                            <input id="searchText" type="text" placeholder="Search.." onkeypress="checkKeyPress(event)">
-                            <button type="submit"><img id="buttonIcon" src="images/search.png" onclick="searchPage()"></button>
-            
-                        </div>
-                        <ul id="content">
-                        </ul>
+                <!-- Search bar and search results -->
+                <div class="searchBarDiv">
+                    <input id="searchText" type="text" placeholder="Search.." onkeypress="checkKeyPress(event)">
+                    <button type="submit"><img id="buttonIcon" src="images/search.png" onclick="searchPage()"></button>
+                </div>
+                <h4 id="noItems">
+                    </h2>
+                    <ul id="content">
+                    </ul>
             </div>
-            
-
         </div>
-
-
-
     </div>
+    <!-- Overlay for displaying detailed item information -->
     <div id="overlay">
         <div id="left">
             <img id="overlayImage" src="" alt="Overlay Image">
         </div>
-
-
-
-
         <div id="right">
+            <!-- Detailed item information -->
             <h2 id="itemTitle"></h2>
-            <h4>Item ID</h4>
-            <p id="itemId"></p>
-            <h4>Description</h4>
-            <p id="itemDescription"></p>
-            <h4>Keywords</h4>
-            <p id="itemKeywords"></p>
-            <h4>Collection</h4>
-            <p id="itemCollection"></p>
-            <h4>Origin</h4>
-            <p id="itemOrigin"></p>
-            <h4>Date of Origin</h4>
-            <p id="itemDateOfOrigin"></p>
-            <h4>Date Donated</h4>
-            <p id="itemDateDonated"></p>
-            <h4>Donated By</h4>
+            <h4>Item ID: </h4>
+            <p id="itemId"></p><br><br>
+            <h4>Description: </h4>
+            <p id="itemDescription"></p><br><br>
+            <h4>Keywords: </h4>
+            <p id="itemKeywords"></p><br><br>
+            <h4>Collection: </h4>
+            <p id="itemCollection"></p><br><br>
+            <h4>Origin: </h4>
+            <p id="itemOrigin"></p><br><br>
+            <h4>Date of Origin: </h4>
+            <p id="itemDateOfOrigin"></p><br><br>
+            <h4>Date Donated: </h4>
+            <p id="itemDateDonated"></p><br><br>
+            <h4>Donated By: </h4>
             <p id="itemDonatedBy"></p>
         </div>
         <div>
+            <!-- Close button for the overlay -->
             <span id="closeButton">&times;</span>
         </div>
-
-
-
-
-
-
     </div>
 </body>
 

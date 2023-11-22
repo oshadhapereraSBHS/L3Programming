@@ -51,7 +51,7 @@ const filters = [];
 // Function to display an array in a container
 function displayArrayInContainer(data, containerId, arrayName) {
     //defining container from HTML page, and making text bold
-    const container = document.getElementById(containerId);
+    var container = document.getElementById(containerId);
     container.style.fontWeight = 'bold';
 
     //looping through array
@@ -254,27 +254,3 @@ function pushContent() {
     items.push(Item14);
     items.push(Item15);
 } //end of push content function
-
-// Function to handle contact form submission
-function contactSubmit() {
-    //setting variables for the three required fields
-    var required1 = document.getElementById("required1").value;
-    var required2 = document.getElementById("required2").value;
-    var required3 = document.getElementById("required3").value;
-    //if name is not filled in, alert asking for name
-    if (required1 == null || required1 == "") {
-        alert("Please your first name")
-    } else if (required2 == null || required2 == "") {
-        //if email is not filled in, alert asking for email
-        alert("Please your email address")
-    } else if (required3 == null || required3 == "") {
-        //if message is not filled in, alert asking for message
-        alert("Please your message")
-    } else {
-        //when submit is pressed, hide cntact form and show thank you message
-        document.getElementById("row2").style.display = "none"
-        document.getElementById("col2").style.display = "none"
-        document.getElementById("col1").style.display = "none"
-        document.getElementById("receivedContact").innerHTML = "Thank you for contacting us."
-    }
-} //end of contactSubmit function

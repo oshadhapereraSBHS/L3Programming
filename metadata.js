@@ -3,7 +3,7 @@
 //Item 1
 const Item1 = new Item(
     //source
-    "/images/museum (1).jpg",
+    "images/museum (1).jpg",
     //ID
     1,
     //Title
@@ -27,7 +27,7 @@ const Item1 = new Item(
 
 
 const Item2 = new Item(
-    "/images/museum (2).jpg",
+    "images/museum (2).jpg",
     2,
     "Plaque",
     "Plaque commemorating academic event",
@@ -40,7 +40,7 @@ const Item2 = new Item(
 );
 
 const Item3 = new Item(
-    "/images/museum (3).jpg",
+    "images/museum (3).jpg",
     3,
     "Signed Bat",
     "Signed cricked bat display",
@@ -53,7 +53,7 @@ const Item3 = new Item(
 );
 
 const Item4 = new Item(
-    "/images/museum (14).jpg",
+    "images/museum (14).jpg",
     4,
     "Music Instruments",
     "Music instruments including drums and trumpets",
@@ -67,7 +67,7 @@ const Item4 = new Item(
 
 
 const Item5 = new Item(
-    "/images/museum (5).jpg",
+    "images/museum (5).jpg",
     5,
     "Shield",
     "Shield celebrating event",
@@ -80,7 +80,7 @@ const Item5 = new Item(
 );
 
 const Item6 = new Item(
-    "/images/museum (6).jpg",
+    "images/museum (6).jpg",
     6,
     "Blueprints",
     "Southland Boys High School architect blueprints",
@@ -92,7 +92,7 @@ const Item6 = new Item(
     "Levi Burns",
 );
 const Item7 = new Item(
-    "/images/museum (7).jpg",
+    "images/museum (7).jpg",
     7,
     "Lockers",
     "Lockers containing various items",
@@ -106,7 +106,7 @@ const Item7 = new Item(
 
 
 const Item8 = new Item(
-    "/images/museum (8).jpg",
+    "images/museum (8).jpg",
     8,
     "Computer",
     "Computer and technology equipment",
@@ -119,7 +119,7 @@ const Item8 = new Item(
 );
 
 const Item9 = new Item(
-    "/images/museum (9).jpg",
+    "images/museum (9).jpg",
     9,
     "Radio Transmitter",
     "Radio transmitter and headphones",
@@ -131,7 +131,7 @@ const Item9 = new Item(
     "Vance Mckenzie",
 );
 const Item10 = new Item(
-    "/images/museum (10).jpg",
+    "images/museum (10).jpg",
     10,
     "Signed Bat 2",
     "Signed cricket bat display",
@@ -145,7 +145,7 @@ const Item10 = new Item(
 
 
 const Item11 = new Item(
-    "/images/museum (11).jpg",
+    "images/museum (11).jpg",
     11,
     "Uniform from WWI",
     "Uniform worn during World War I",
@@ -158,7 +158,7 @@ const Item11 = new Item(
 );
 
 const Item12 = new Item(
-    "/images/museum (12).jpg",
+    "images/museum (12).jpg",
     12,
     "Trophies",
     "Academic and sporting trophy display",
@@ -171,7 +171,7 @@ const Item12 = new Item(
 );
 
 const Item13 = new Item(
-    "/images/museum (13).jpg",
+    "images/museum (13).jpg",
     13,
     "Stained Glass Window",
     "Stained glass window featuring owl",
@@ -185,7 +185,7 @@ const Item13 = new Item(
 
 
 const Item14 = new Item(
-    "/images/museum (4).jpg",
+    "images/museum (4).jpg",
     14,
     "Biology Props",
     "Human body systems model , clock and camera",
@@ -198,7 +198,7 @@ const Item14 = new Item(
 );
 
 const Item15 = new Item(
-    "/images/museum (15).jpg",
+    "images/museum (15).jpg",
     15,
     "Books",
     "Cupboard of old books",

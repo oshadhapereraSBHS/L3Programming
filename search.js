@@ -185,30 +185,47 @@ function fillFilters() {
     }
 } //end of fillFilters function
 
-// Function to filter and update the displayed items based on selected filters
+// Function for filtering search results
 function filter() {
-    // Display the remove button
+    // Show the remove button
     document.getElementById("removeButton").style.display = "block";
 
     // Create a copy of the searchDisplay array for filtering
     const searchDisplayCopy = [...searchDisplay];
-    const contentElement = document.getElementById("content");
 
-    // Clear the existing content in the contentElement
+    //Define variables defining search results list
+    var contentElement = document.getElementById("content");
+
+    // Clear the existing content
     while (contentElement.firstChild) {
         contentElement.removeChild(contentElement.firstChild);
     }
 
+    // Create an array to store the selected filters
+    var selectedFilters = [];
+
+    // Loop through your filters array
+    for (var x = 0; x < filters.length; x++) {
+        // Check if the checkbox for the current filter is checked
+        if (isCheckboxChecked(filters[x][1])) {
+            selectedFilters.push(filters[x]);
+        }
+    }
+
+    // Create a new variable for the filtered filters array
+    var filteredFilters = selectedFilters;
+    // Flag to check if there are any items left
+    var hasItems = false;
+
+    //loop through currently displayed results
     for (var i = searchDisplayCopy.length - 1; i >= 0; i--) {
-        // Initialize a flag to determine if an item should be removed
         var shouldRemove = true;
+        //loop through filters
+        for (var x = 0; x < filteredFilters.length; x++) {
+            //variables for new filters converted to lower case
+            var newFilter = filteredFilters[x][1].toLowerCase();
 
-        // Loop through the selected filters
-        for (var x = 0; x < filters.length; x++) {
-            // Convert the current filter to lowercase
-            var newFilter = filters[x][1].toLowerCase();
-
-            // Check if the item matches the current filter in terms of keywords, origin, collection, or date of origin
+            // Check if the item porperties match the current filter
             if (
                 searchDisplayCopy[i].keywords[0].toLowerCase() == newFilter ||
                 searchDisplayCopy[i].keywords[1].toLowerCase() == newFilter ||
@@ -224,28 +241,52 @@ function filter() {
 
         // If the item should not be removed based on filters, carry on
         if (!shouldRemove) {
-            // Get the current item from the copied searchDisplay array
-            const item = searchDisplayCopy[i];
-
-            // Create new list items to display the item
-            const li = document.createElement("li");
-            const img = document.createElement("img");
+            //variable for items from search results
+            var item = searchDisplayCopy[i];
+            //defining list, image, heading and date for display
+            var li = document.createElement("li");
+            var img = document.createElement("img");
             var heading = document.createElement("h3");
             var date = document.createElement("p");
-
-            // Append heading and date to the list item
+            //appending list to contentElement, and append images, headings and dates to list items
             li.appendChild(img);
             contentElement.appendChild(li);
             li.appendChild(heading);
             li.appendChild(date);
-
-            // Set the image source, heading text, and date text based on the item
+            //defining image source, heading text and date text
             img.src = item.source;
             heading.innerHTML = item.itemName;
             date.innerHTML = item.dateOfOrigin;
+            //set hasItems to true
+            hasItems = true;
         }
     }
-} //end of filter function
+    if (!hasItems) {
+        //remove all filters
+        remove()
+    }
+
+} //End of filter function
+
+// Function to check if a checkboxes are checked
+function isCheckboxChecked(label) {
+    // Get all checkboxes on the page
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+    // Loop through all the checkboxes
+    for (var i = 0; i < checkboxes.length; i++) {
+        // Check if the current checkbox has a specified label and whether it is checked
+        if (checkboxes[i].getAttribute("dataArrayItem") === label && checkboxes[i].checked) {
+            // Return true if a checked checkbox with the label is found
+            return true;
+        }
+    }
+    // Return false if no checked checkbox with the label is found
+    return false;
+} //end of isCheckboxChecked function
+
+
+
 
 // Array to store image sources
 const imageSources = [];
@@ -258,22 +299,22 @@ function remove() {
 // Function to open overlay for displaying item details
 function newPage() {
     // Get references to relevant elements on the page
-    const imageList = document.getElementById("content");
-    const overlay = document.getElementById("overlay");
-    const overlayImage = document.getElementById("overlayImage");
-    const closeButton = document.getElementById("closeButton");
+    var imageList = document.getElementById("content");
+    var overlay = document.getElementById("overlay");
+    var overlayImage = document.getElementById("overlayImage");
+    var closeButton = document.getElementById("closeButton");
 
     // Add a click event listener to the image list
     imageList.addEventListener("click", function (event) {
-        const target = event.target;
+        var target = event.target;
 
         // Find the closest list item clicked
-        const listItem = findClosestListItem(target);
+        var listItem = findClosestListItem(target);
 
         if (listItem) {
             // Get the source of the clicked image and its index in the list
-            const clickedImageSrc = listItem.querySelector("img").src;
-            const i = Array.from(imageList.children).indexOf(listItem);
+            var clickedImageSrc = listItem.querySelector("img").src;
+            var i = Array.from(imageList.children).indexOf(listItem);
 
             //Loop through array
             if (i >= 0 && i < searchDisplay.length) {
@@ -321,3 +362,54 @@ function newPage() {
         return null;
     }
 } //end of newPage function
+
+
+
+// Function to display predictive text suggestions
+function showPredictions() {
+    // Get the input field by its ID
+    var input = document.getElementById("searchText");
+    // Convert search text it to lowercase
+    var query = input.value.toLowerCase();
+
+    // Define predictions container
+    var predictions = document.getElementById("predictions");
+
+    // Clear any existing content in the predictions container
+    predictions.innerHTML = "";
+
+    // Check if the input field is empty
+    if (query.length === 0) {
+        return;
+    }
+
+    // Filter items that match the query and convert them to lowercase
+    var matchingItems = items.filter(item => item.itemName.toLowerCase().includes(query));
+
+    // Loop through the matching items
+    matchingItems.forEach(item => {
+        // Create a new div element for the prediction
+        var prediction = document.createElement("div");
+
+        // Set the text content of the prediction element to the item name
+        prediction.textContent = item.itemName;
+
+        // Add a class to the predictions
+        prediction.classList.add("prediction");
+
+        // Add a event listener to check when a prediction is clicked
+        prediction.addEventListener("click", () => {
+            // Set the input field value to the clicked prediction
+            input.value = item.itemName;
+
+            // Clear predictions container
+            predictions.innerHTML = "";
+
+            // searchPage function searches the items using selected prediction
+            searchPage();
+        });
+
+        // Append the prediction element to the predictions container
+        predictions.appendChild(prediction);
+    });
+} //End of function

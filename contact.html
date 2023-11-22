@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
     <!-- External JavaScript files -->
-    <script type="text/javascript" src="gallery.js"></script>
+    <script type="text/javascript" src="contact.js"></script>
     <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript" src="metadata.js"></script>
     <!-- External CSS file -->
@@ -26,7 +26,7 @@
         <div class="navDiv">
             <!-- Logo and home page link -->
             <div class="logoDiv">
-                <img id="logo" src="/images/logo.png" onclick="homePage()">
+                <img id="logo" src="images/logo.png" onclick="homePage()">
             </div>
             <div class="bottomNav">
                 <!-- Navigation links -->
@@ -57,7 +57,7 @@
                 <input id="required1" type="text" id="firstName" name="firstName" placeholder="Your name.."><br><br>
                 <!-- Email input -->
                 <label for="fname">Email*</label><br>
-                <input id="required2" type="text" id="email" name="email" placeholder="Your email.."><br><br>
+                <input id="required2" type="email" name="email" placeholder="Your email.."><br><br>
             </div>
             <div class="col2b" id="col2">
                 <!-- Last Name input -->
@@ -65,7 +65,7 @@
                 <input type="text" id="lastName" name="lastName" placeholder="Your last name.."><br><br>
                 <!-- Phone input -->
                 <label for="phone">Phone</label><br>
-                <input type="number" id="phone" name="phone" placeholder="Your phone number.."><br><br>
+                <input type="tel" id="phone" name="phone" placeholder="Your phone number.."><br><br>
             </div>
             <!-- Received contact message display -->
             <div id="receivedContact"></div>

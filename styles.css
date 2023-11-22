@@ -1,7 +1,7 @@
 /* Define a custom font 'Tiemann' and specify its source file */
 @font-face {
     font-family: 'Tiemann';
-    src: url('/fonts/Tiemann.ttf'); 
+    src: url('/fonts/Tiemann.ttf');
 }
 
 /* Define another custom font 'Montserrat' and specify its source file */
@@ -146,6 +146,7 @@ li {
     padding-left: 10%;
     padding-right: 10%;
 }
+
 /* Positioning divs in contact page */
 .col1 {
     grid-column: 1/2;
@@ -316,6 +317,7 @@ iframe {
 #contactHeadingDiv {
     grid-column: 1/5;
 }
+
 /* Inline display for overlay text */
 #right h4,
 #right p {
@@ -401,6 +403,41 @@ iframe {
 }
 
 /* Center text alignment for gallery and catalogue navigation link*/
-.galleryLinkDiv, .searchLinkDiv {
+.galleryLinkDiv,
+.searchLinkDiv {
     text-align: center;
+}
+
+/*borders for predictions*/
+.prediction {
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+/*border for search button*/
+#searchButton {
+    border-radius: 0;
+    border: 1px solid grey;
+}
+
+/*Change color of search button on hover*/
+#searchButton:hover {
+    background-color: white;
+}
+
+/*Make prediction bold on hover*/
+.prediction:hover {
+    font-weight: bold;
+}
+
+/* add box shadows to gallery and catalogue images on hover */
+#content li:hover img {
+    box-shadow: 2px 2px 4px black;
+}
+
+.galleryItem img:hover {
+    box-shadow: 2px 2px 4px black;
+
 }
